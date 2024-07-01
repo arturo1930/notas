@@ -1,0 +1,15 @@
+graph TD
+    A[App Flutter] -->|HTTP/REST| B[API Gateway Quarkus]
+    B -->|HTTP/REST| C[Microservicio Quarkus 1]
+    B -->|HTTP/REST| D[Microservicio Quarkus 2]
+    B -->|HTTP/REST| E[Microservicio Quarkus 3]
+    C -->|SOAP| F[Servicio SOAP 1]
+    D -->|SOAP| G[Servicio SOAP 2]
+    E -->|SOAP| H[Servicio SOAP 3]
+    B -->|JWT| I[Keycloak]
+    subgraph Middleware Quarkus
+    B
+    C
+    D
+    E
+    end
