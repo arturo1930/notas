@@ -1,0 +1,24 @@
+# Asegúrate de que Keycloak esté ejecutándose en http://localhost:8180
+
+# Crea un nuevo realm llamado "jhipster"
+
+# Crea un cliente para el gateway
+Client ID: web_app
+Client Protocol: openid-connect
+Access Type: confidential
+Valid Redirect URIs: http://localhost:8080/*
+Web Origins: http://localhost:8080
+
+# Crea un cliente para el microservicio de productos
+Client ID: internal
+Client Protocol: openid-connect
+Access Type: confidential
+Service Accounts Enabled: ON
+
+# Crea roles
+Roles: ROLE_ADMIN, ROLE_USER
+
+# Crea usuarios de prueba y asígnales roles
+
+# Exporta las claves públicas y guárdalas en el gateway y el microservicio
+# en META-INF/resources/publicKey.pem
